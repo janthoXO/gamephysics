@@ -36,6 +36,8 @@ public:
 	Vec3 getPositionOfMassPoint(int index);
 	Vec3 getVelocityOfMassPoint(int index);
 	void applyExternalForce(Vec3 force);
+	void euler_step(float h);
+	void mid_point(float h);
 	
 	// Do Not Change
 	void setIntegrator(int integrator) {

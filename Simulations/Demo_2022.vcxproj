@@ -230,12 +230,15 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="DrawingUtilitiesClass.h" />
+    <ClInclude Include="MassSpringSystemSimulator.cpp" />
     <ClInclude Include="MassSpringSystemSimulator.h" />
     <ClInclude Include="Simulator.h" />
     <ClInclude Include="TemplateSimulator.h" />
     <ClInclude Include="util\FFmpeg.h" />
+    <ClInclude Include="util\MassPoint.h" />
     <ClInclude Include="util\matrixbase.h" />
     <ClInclude Include="util\quaternion.h" />
+    <ClInclude Include="util\spring.h" />
     <ClInclude Include="util\timer.h" />
     <ClInclude Include="util\util.h" />
     <ClInclude Include="util\vectorbase.h" />
