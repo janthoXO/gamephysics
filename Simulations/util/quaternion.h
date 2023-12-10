@@ -8,6 +8,7 @@
 #ifndef UTIL_QUATERIONS_H
 #define UTIL_QUATERIONS_H
 
+#include "mat3.h"
 #include "matrixbase.h"
 #include "vectorbase.h"
 
@@ -67,6 +68,23 @@ public:
 		DirectX::XMVECTOR v  = XMVectorSet(x,y,z,w);
 		matrix4x4<Scalar> M(DirectX::XMMatrixRotationQuaternion(v));
 		return M;
+	}
+
+	mat3<Scalar> getRotMat3() const
+	{
+		return mat3<double>(
+		1 - 2*y*y - 2*z*z,
+		2*x*y - 2*w*z,
+		2*x*z + 2*w*y,
+
+		2*x*y + 2*w*z,
+		1 - 2*x*x - 2*z*z,
+		2*y*z - 2*w*x,
+
+		2*x*z - 2*w*y,
+		2*y*z + 2*w*x,
+		1-2*x*x - 2*y*y
+		);
 	}
 
 	vector3Dim<Scalar> getAxis() const

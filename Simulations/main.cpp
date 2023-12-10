@@ -20,9 +20,9 @@ using namespace GamePhysics;
 
 //#define ADAPTIVESTEP
 
-#define TEMPLATE_DEMO
+//#define TEMPLATE_DEMO
 //#define MASS_SPRING_SYSTEM
-//#define RIGID_BODY_SYSTEM
+#define RIGID_BODY_SYSTEM
 //#define SPH_SYSTEM
 
 #ifdef TEMPLATE_DEMO
@@ -35,7 +35,7 @@ using namespace GamePhysics;
 #include "RigidBodySystemSimulator.h"
 #endif
 #ifdef SPH_SYSTEM
-//#include "SPHSystemSimulator.h"
+#include "SPHSystemSimulator.h"
 #endif
 
 DrawingUtilitiesClass * g_pDUC;
@@ -368,7 +368,7 @@ int main(int argc, char* argv[])
 	g_pSimulator= new RigidBodySystemSimulator();
 #endif
 #ifdef SPH_SYSTEM
-	//g_pSimulator= new SPHSystemSimulator();
+	g_pSimulator= new SPHSystemSimulator();
 #endif
 	g_pSimulator->reset();
 
