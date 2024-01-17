@@ -6,6 +6,16 @@
 
 class Grid {
 	// to be implemented
+public:
+	Grid(int m, int n)
+	{
+		arr = new float*[m];
+		for (int i = 0; i < m; i++)
+		{
+			arr[i] = new float[n];
+		}
+	}
+	float** arr;
 };
 
 
@@ -29,8 +39,8 @@ public:
 	void drawObjects();
 
 	// Feel free to change the signature of these functions, add arguments, etc.
-	void diffuseTemperatureExplicit();
-	void diffuseTemperatureImplicit();
+	void diffuseTemperatureExplicit(float timeStep);
+	void diffuseTemperatureImplicit(float timeStep);
 
 private:
 	// Attributes
@@ -40,7 +50,12 @@ private:
 	Point2D m_mouse;
 	Point2D m_trackmouse;
 	Point2D m_oldtrackmouse;
-	Grid T;
+	
+	Grid T = Grid(1, 1);
+	int m;
+	int n;
+	float size;
+	float alpha;
 };
 
 #endif
